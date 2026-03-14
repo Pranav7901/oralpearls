@@ -16,11 +16,11 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-white/80 border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-white/90 border-b border-slate-200">
 
       {/* Top Bar */}
-      <div className="bg-primary text-white text-sm">
-        <div className="container flex items-center justify-between py-2">
+      <div className="bg-sky-500 text-white text-sm">
+        <div className="container mx-auto flex items-center justify-between py-2 px-4">
           <span className="font-medium tracking-wide">
             Dr. Ratnadip Meshram
           </span>
@@ -36,20 +36,17 @@ const Header = () => {
       </div>
 
       {/* Navbar */}
-      <div className="container flex items-center justify-between h-16 md:h-20">
+      <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
 
         {/* Logo */}
-        <a
-          href="#home"
-          className="flex items-center gap-3 group"
-        >
+        <a href="#home" className="flex items-center gap-3 group">
           <img
             src={logo}
             alt="Oral Pearls Dental Clinic"
             className="h-11 w-11 md:h-12 md:w-12 transition-transform duration-300 group-hover:scale-110"
           />
 
-          <span className="font-semibold text-lg md:text-xl tracking-tight text-gray-900">
+          <span className="font-semibold text-lg md:text-xl tracking-tight text-slate-800">
             Oral Pearls
           </span>
         </a>
@@ -61,19 +58,19 @@ const Header = () => {
             <a
               key={l.href}
               href={l.href}
-              className="relative text-sm font-medium text-gray-600 hover:text-primary transition-colors group"
+              className="relative text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors group"
             >
               {l.label}
 
-              {/* animated underline */}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              {/* Animated underline */}
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
 
           {/* CTA Button */}
           <a
             href="tel:+919096973622"
-            className="flex items-center gap-2 px-6 py-2.5 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-primary to-blue-500 hover:scale-105 transition-transform shadow-md"
+            className="flex items-center gap-2 px-6 py-2.5 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-sky-500 to-sky-600 hover:scale-105 transition-transform shadow-md"
           >
             <Phone className="w-4 h-4" />
             Call Now
@@ -87,9 +84,9 @@ const Header = () => {
           className="lg:hidden p-2"
         >
           {open ? (
-            <X className="w-6 h-6 text-gray-800" />
+            <X className="w-6 h-6 text-slate-800" />
           ) : (
-            <Menu className="w-6 h-6 text-gray-800" />
+            <Menu className="w-6 h-6 text-slate-800" />
           )}
         </button>
       </div>
@@ -97,17 +94,17 @@ const Header = () => {
       {/* Mobile Menu */}
       <div
         className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          open ? "max-h-[500px] border-t border-gray-200" : "max-h-0"
+          open ? "max-h-[500px] border-t border-slate-200" : "max-h-0"
         }`}
       >
-        <div className="container py-5 flex flex-col gap-4 bg-white">
+        <div className="container mx-auto py-5 px-4 flex flex-col gap-4 bg-white">
 
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-gray-700 font-medium hover:text-primary transition"
+              className="text-slate-700 font-medium hover:text-sky-600 transition"
             >
               {l.label}
             </a>
@@ -115,7 +112,7 @@ const Header = () => {
 
           <a
             href="tel:+919096973622"
-            className="flex items-center justify-center gap-2 mt-3 px-5 py-3 bg-primary text-white rounded-full font-semibold shadow"
+            className="flex items-center justify-center gap-2 mt-3 px-5 py-3 bg-sky-500 text-white rounded-full font-semibold shadow hover:bg-sky-600 transition"
           >
             <Phone className="w-4 h-4" />
             Call Now

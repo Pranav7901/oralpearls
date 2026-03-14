@@ -9,24 +9,43 @@ const reasons = [
 ];
 
 const WhyChooseUsSection = () => (
-  <section className="section-padding">
-    <div className="container">
-      <h2 className="section-heading text-center">Why Choose <span className="text-primary">Us</span></h2>
-      <span className="section-heading-accent mx-auto" />
+  <section className="py-20 bg-white">
+    <div className="container mx-auto px-4">
+
+      {/* Heading */}
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-900">
+        Why Choose <span className="text-sky-600">Us</span>
+      </h2>
+
+      <div className="w-20 h-1 bg-sky-500 mx-auto rounded mt-4"></div>
+
+      {/* Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 mt-12">
+
         {reasons.map((r, i) => (
           <div
             key={r.title}
-            className="flex flex-col items-center text-center gap-3 p-5 rounded-2xl hover:bg-accent transition-colors duration-300 opacity-0 animate-fade-up"
-            style={{ animationDelay: `${i * 0.08}s` }}
+            className="flex flex-col items-center text-center gap-3 p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:bg-sky-50 transition-all duration-300"
           >
-            <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center">
-              <r.icon className="w-7 h-7 text-primary" />
+
+            {/* Icon */}
+            <div className="w-14 h-14 rounded-full bg-sky-100 flex items-center justify-center">
+              <r.icon className="w-7 h-7 text-sky-600" />
             </div>
-            <h3 className="font-semibold text-sm text-foreground">{r.title}</h3>
-            <p className="text-xs text-muted-foreground">{r.desc}</p>
+
+            {/* Title */}
+            <h3 className="font-semibold text-sm text-slate-900">
+              {r.title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-xs text-slate-600">
+              {r.desc}
+            </p>
+
           </div>
         ))}
+
       </div>
     </div>
   </section>

@@ -34,29 +34,45 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section id="testimonials" className="section-padding bg-secondary">
-    <div className="container">
-      <h2 className="section-heading text-center">What Our <span className="text-primary">Patients Say</span></h2>
-      <span className="section-heading-accent mx-auto" />
+  <section id="testimonials" className="py-20 bg-sky-50">
+    <div className="container mx-auto px-4">
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+      {/* Heading */}
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-900">
+        What Our <span className="text-sky-600">Patients Say</span>
+      </h2>
+
+      <div className="w-20 h-1 bg-sky-500 mx-auto rounded mt-4"></div>
+
+      {/* Testimonials Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+
         {testimonials.map((t, i) => (
           <div
             key={t.name}
-            className="card-base opacity-0 animate-fade-up"
-            style={{ animationDelay: `${i * 0.1}s` }}
+            className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 hover:-translate-y-2"
           >
+
+            {/* Stars */}
             <div className="flex gap-1 mb-4">
               {Array.from({ length: t.rating }).map((_, j) => (
-                <Star key={j} className="w-4 h-4 fill-primary text-primary" />
+                <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
               ))}
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6 italic">
+
+            {/* Text */}
+            <p className="text-slate-600 text-sm leading-relaxed mb-6 italic">
               "{t.text}"
             </p>
-            <p className="font-semibold text-foreground">{t.name}</p>
+
+            {/* Name */}
+            <p className="font-semibold text-slate-900">
+              {t.name}
+            </p>
+
           </div>
         ))}
+
       </div>
     </div>
   </section>
